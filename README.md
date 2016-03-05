@@ -1,1 +1,1 @@
-"# django-git" 
+# django-git" 
