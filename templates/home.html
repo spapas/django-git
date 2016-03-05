@@ -1,0 +1,12 @@
+{% load django_git_tags %}
+{% get_git_info as gi %}
+
+<html>
+<body>
+    <ul>
+        <li>Hash: {{ gi.hash }}</li>
+        <li>Subject: {{ gi.subject }}</li>
+        <li>Commiter date: {{ gi.commiter_date }}</li>
+    </ul>
+</body>
+</html>

@@ -15,7 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.shortcuts import render
+
+from django_git.views import git_info
+
+def home(request):
+    return render(request, "home.html")
 
 urlpatterns = [
+    
+    url(r'^$', home),
+    url(r'^git_info/$', git_info),
     url(r'^admin/', admin.site.urls),
+    
 ]
