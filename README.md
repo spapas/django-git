@@ -1,4 +1,4 @@
-# django-git
+# django-git-info
 
 A very simple app to get informatin from the git repository of your project.
 
@@ -11,7 +11,7 @@ the ``get_git_info`` function:
 
 ```
 
-from django_git import get_git_info
+from django_git_info import get_git_info
 
 info = get_git_info()
 
@@ -29,7 +29,7 @@ Also, there's a JSON view to get your git info from an API - just add the
 following to your urls.py:
 
 ```
-from django_git.views import git_info
+from django_git_info.views import git_info
 
 urlpatterns = [
     ...
@@ -38,11 +38,11 @@ urlpatterns = [
 ```
 
 Also, if you want to print the git info to other views, there's a templatetag for this.
-Just include ``django_git`` to your ``INSTALLED_APPS`` setting and in your templates you
+Just include ``django_git_info`` to your ``INSTALLED_APPS`` setting and in your templates you
 could do:
 
 ```
-{% load django_git_tags %}
+{% load django_git_info_tags %}
 {% get_git_info as gi %}
 
 <ul>

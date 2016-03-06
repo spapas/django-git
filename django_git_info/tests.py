@@ -4,6 +4,7 @@ from django.test import TestCase, override_settings, RequestFactory
 
 from django_git_info import get_git_info
 from django_git_info.views import git_info
+from django_git_info.templatetags.django_git_info_tags import get_git_info as get_git_info_tag
 
 class NoConfigTestCase(TestCase):
     def test_get_git_info(self):
@@ -29,3 +30,8 @@ class GitInfoTestCase(TestCase):
         self.assertEquals(response.status_code, 200)
         json_resp = json.loads(response.content)
         self.assertTrue('hash' in json_resp)
+        
+    def test_templatetag(self):
+        info = get_git_info_tag() 
+        self.assertTrue('hash' in info )
+        self.assertTrue(isinstance(info['commiter_date'], datetime.datetime) )
