@@ -97,4 +97,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-DJANGO_GIT_REPO = BASE_DIR
+# Get my parent as the DJANGO_GIT_REPO
+DJANGO_GIT_REPO = os.path.join(BASE_DIR, '..')
+
+
+# Add the parent directory to the sys.path to help development
+import sys
+extra_path = os.path.join(BASE_DIR, '..')
+sys.path.insert(1, extra_path)

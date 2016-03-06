@@ -1,0 +1,1 @@
+from django_git.gitint import get_git_info
