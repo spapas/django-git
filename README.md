@@ -33,3 +33,16 @@ could do:
 </ul>
 
 ```
+
+Finally, there's also a ``get_git_info`` management command to ensure that everything
+will going to work ok: 
+
+```
+> python manage.py get_git_info
+
+body=
+commiter_date=2016-03-06T15:10:00
+hash=8d4f55cc2f7ff86b2ed7679e9252ae02cb360039
+commiter_name=serafeim
+...
+```

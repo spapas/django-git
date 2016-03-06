@@ -9,4 +9,6 @@ class Command(BaseCommand):
 
     #@transaction.commit_manually
     def handle(self, *args, **options):
-        print get_git_info()
+        info = get_git_info()
+        for key in info.keys():
+            print '{0}={1}'.format(key, info[key])

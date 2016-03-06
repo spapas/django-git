@@ -28,6 +28,8 @@ def get_git_info():
         r = git.Repo(settings.DJANGO_GIT_REPO)
         git_resp = r.git.log(pretty=formatted_formats, n=1, date='format:%Y-%m-%dT%H:%M:%S')
         git_resp = git_resp.replace('\n', '\\n')
-        return json.loads(git_resp)
+        json_resp = json.loads(git_resp)
+        json_resp['body'] = json_resp['body'].replace('\\n', '\n')
+        return json_resp
     except AttributeError:
         raise ImproperlyConfigured("Please add a 'DJANGO_GIT_REPO' setting with the base of your git project to your settings.py")
