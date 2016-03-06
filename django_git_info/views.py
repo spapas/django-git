@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 import json 
-from gitint import get_git_info
+from django_git_info.gitint import get_git_info
 from datetime import datetime
 
 # FROM http://stackoverflow.com/a/22238613

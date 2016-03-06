@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.core.management.base import BaseCommand, CommandError
 
-from django_git import get_git_info
+from django_git_info import get_git_info
 
 
 class Command(BaseCommand):

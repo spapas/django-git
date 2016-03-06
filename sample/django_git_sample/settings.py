@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    'django_git', 
+    'django_git_info', 
 ]
 
 MIDDLEWARE_CLASSES = [

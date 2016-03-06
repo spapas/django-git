@@ -17,7 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.shortcuts import render
 
-from django_git.views import git_info
+from django_git_info.views import git_info
 
 def home(request):
     return render(request, "home.html")
