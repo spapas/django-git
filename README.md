@@ -6,7 +6,26 @@ Just add a ``DJANGO_GIT_REPO = REPO_DIR`` setting to your settings.py - ``BASE_D
 is where your git repository resides - usually this should be in the same directory
 as your ``manage.py``.
 
-After that, you can immediately use a JSON view to get your git info - just add the
+After that, you can immediately get information about your git repo using 
+the ``get_git_info`` function:
+
+```
+
+from django_git import get_git_info
+
+info = get_git_info()
+
+print info['hash']
+
+```
+
+The keys of the returned dictionary are:
+hash,  abbr_hash,  subject, sanitized_subject,  body,  author_name,  author_email,
+author_date,  commiter_name,  commiter_email, commiter_date - check out what each
+one does at: https://git-scm.com/docs/pretty-formats
+
+
+Also, there's a JSON view to get your git info from an API - just add the
 following to your urls.py:
 
 ```
@@ -46,3 +65,4 @@ hash=8d4f55cc2f7ff86b2ed7679e9252ae02cb360039
 commiter_name=serafeim
 ...
 ```
+
