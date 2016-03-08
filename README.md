@@ -2,6 +2,8 @@
 
 A very simple app to get informatin from the git repository of your project.
 
+** Warning: You must have git 2.6+ installed in order to use this application.** This version of git adds a custom format for date, which is required in order to parse the dates in python.
+
 Just add a ``DJANGO_GIT_REPO = REPO_DIR`` setting to your settings.py - ``BASE_DIR``
 is where your git repository resides - usually this should be in the same directory
 as your ``manage.py``.
